@@ -1,0 +1,65 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="confirmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="400" fill="#FEF2F2"/>
+  
+  <circle cx="80" cy="100" r="70" fill="#FECACA" opacity="0.3"/>
+  <circle cx="520" cy="300" r="80" fill="#FECACA" opacity="0.2"/>
+  
+  <!-- Checklist document -->
+  <g transform="translate(180, 80)">
+    <rect x="0" y="0" width="240" height="260" rx="16" fill="#FFFFFF" 
+          filter="drop-shadow(0 20px 40px rgba(239,68,68,0.2))"/>
+    
+    <!-- Header -->
+    <rect x="20" y="20" width="200" height="50" rx="12" fill="url(#confirmGrad)"/>
+    <text x="120" y="50" font-family="Arial" font-size="18" fill="#FFFFFF" 
+          text-anchor="middle" font-weight="bold">Review</text>
+    
+    <!-- Checklist items -->
+    <g transform="translate(30, 100)">
+      <!-- Item 1 -->
+      <circle cx="10" cy="10" r="10" fill="#10B981"/>
+      <path d="M6 10 L9 13 L14 7" stroke="#FFFFFF" stroke-width="2" 
+            fill="none" stroke-linecap="round"/>
+      <rect x="30" y="5" width="150" height="10" rx="5" fill="#F3F4F6"/>
+      
+      <!-- Item 2 -->
+      <circle cx="10" cy="40" r="10" fill="#10B981"/>
+      <path d="M6 40 L9 43 L14 37" stroke="#FFFFFF" stroke-width="2" 
+            fill="none" stroke-linecap="round"/>
+      <rect x="30" y="35" width="130" height="10" rx="5" fill="#F3F4F6"/>
+      
+      <!-- Item 3 -->
+      <circle cx="10" cy="70" r="10" fill="#10B981"/>
+      <path d="M6 70 L9 73 L14 67" stroke="#FFFFFF" stroke-width="2" 
+            fill="none" stroke-linecap="round"/>
+      <rect x="30" y="65" width="140" height="10" rx="5" fill="#F3F4F6"/>
+      
+      <!-- Item 4 -->
+      <circle cx="10" cy="100" r="10" fill="#10B981"/>
+      <path d="M6 100 L9 103 L14 97" stroke="#FFFFFF" stroke-width="2" 
+            fill="none" stroke-linecap="round"/>
+      <rect x="30" y="95" width="120" height="10" rx="5" fill="#F3F4F6"/>
+    </g>
+    
+    <!-- Button -->
+    <rect x="40" y="220" width="160" height="20" rx="10" fill="url(#confirmGrad)"/>
+  </g>
+  
+  <!-- Star badges -->
+  <g transform="translate(100, 260)">
+    <circle cx="0" cy="0" r="20" fill="#EF4444" opacity="0.2"/>
+    <polygon points="0,-8 2,-3 7,-3 3,1 5,6 0,3 -5,6 -3,1 -7,-3 -2,-3" fill="#EF4444"/>
+  </g>
+  
+  <g transform="translate(490, 120)">
+    <circle cx="0" cy="0" r="25" fill="#EF4444" opacity="0.15"/>
+    <polygon points="0,-10 3,-3 10,-3 4,2 7,9 0,4 -7,9 -4,2 -10,-3 -3,-3" fill="#EF4444"/>
+  </g>
+</svg>

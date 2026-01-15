@@ -1,0 +1,82 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#faf5ff"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:0.05" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#purpleGrad)"/>
+  
+  <!-- Top Bar with Search -->
+  <rect width="800" height="70" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+  <rect x="20" y="23" width="140" height="24" rx="4" fill="url(#cardGrad)"/>
+  <rect x="300" y="20" width="300" height="30" rx="15" fill="#f3f4f6" stroke="#e5e7eb"/>
+  <circle cx="730" cy="35" r="20" fill="#ede9fe"/>
+  
+  <!-- Sidebar with Active State -->
+  <rect width="220" height="530" y="70" fill="#ffffff" filter="drop-shadow(2px 0 8px rgba(0,0,0,0.05))"/>
+  <rect x="20" y="100" width="180" height="14" rx="7" fill="url(#cardGrad)"/>
+  <rect x="20" y="135" width="180" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="20" y="170" width="180" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="20" y="205" width="180" height="14" rx="7" fill="#f3f4f6"/>
+  <rect x="20" y="240" width="180" height="14" rx="7" fill="#f3f4f6"/>
+  
+  <!-- Main Content -->
+  <g transform="translate(240, 90)">
+    <!-- Header with Badge -->
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">Insurance Now</text>
+    <rect x="0" y="35" width="90" height="22" rx="11" fill="#c7d2fe"/>
+    <text x="10" y="50" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#4c1d95">POPULAR</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Advanced Insurance Management Platform</text>
+    
+    <!-- KPI Cards with Gradient -->
+    <rect x="0" y="95" width="170" height="110" rx="12" fill="url(#cardGrad)"/>
+    <text x="15" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">1,234</text>
+    <text x="15" y="145" font-family="Arial, sans-serif" font-size="12" fill="#e9d5ff">Total Policies</text>
+    <circle cx="145" cy="115" r="18" fill="rgba(255,255,255,0.2)"/>
+    
+    <rect x="190" y="95" width="170" height="110" rx="12" fill="#ffffff" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.07))"/>
+    <text x="205" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#8b5cf6">456</text>
+    <text x="205" y="145" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Active Claims</text>
+    <rect x="320" y="110" width="35" height="35" rx="8" fill="#f3e8ff"/>
+    
+    <rect x="380" y="95" width="170" height="110" rx="12" fill="#ffffff" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.07))"/>
+    <text x="395" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#22c55e">95.2%</text>
+    <text x="395" y="145" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Satisfaction Rate</text>
+    
+    <!-- Analytics Chart -->
+    <rect x="0" y="225" width="360" height="270" rx="12" fill="#ffffff" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.07))"/>
+    <text x="15" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#1e293b">Claims Analytics</text>
+    <text x="15" y="268" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Last 7 days</text>
+    
+    <!-- Line Chart -->
+    <polyline points="30,430 70,400 110,420 150,380 190,390 230,360 270,370 310,340 330,350" 
+              fill="none" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+    <polyline points="30,450 70,440 110,460 150,430 190,445 230,420 270,435 310,410 330,425" 
+              fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    
+    <!-- Recent Activity Panel -->
+    <rect x="380" y="225" width="170" height="270" rx="12" fill="#ffffff" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.07))"/>
+    <text x="395" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Recent Activity</text>
+    
+    <circle cx="405" cy="280" r="6" fill="#8b5cf6"/>
+    <rect x="420" y="270" width="120" height="8" rx="4" fill="#e0e7ff"/>
+    
+    <circle cx="405" cy="310" r="6" fill="#22c55e"/>
+    <rect x="420" y="300" width="100" height="8" rx="4" fill="#dcfce7"/>
+    
+    <circle cx="405" cy="340" r="6" fill="#f59e0b"/>
+    <rect x="420" y="330" width="110" height="8" rx="4" fill="#fef3c7"/>
+    
+    <circle cx="405" cy="370" r="6" fill="#3b82f6"/>
+    <rect x="420" y="360" width="90" height="8" rx="4" fill="#dbeafe"/>
+  </g>
+</svg>

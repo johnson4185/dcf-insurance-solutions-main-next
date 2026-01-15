@@ -1,0 +1,51 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="400" fill="#FFFBEB"/>
+  
+  <circle cx="500" cy="100" r="70" fill="#FED7AA" opacity="0.3"/>
+  <circle cx="100" cy="300" r="90" fill="#FED7AA" opacity="0.2"/>
+  
+  <!-- Credit Card -->
+  <g transform="translate(150, 120)">
+    <rect x="0" y="0" width="300" height="180" rx="16" fill="url(#cardGrad)" 
+          filter="drop-shadow(0 20px 40px rgba(245,158,11,0.3))"/>
+    
+    <!-- Chip -->
+    <rect x="30" y="40" width="50" height="40" rx="8" fill="#FCD34D" opacity="0.3"/>
+    <rect x="35" y="45" width="40" height="30" rx="4" fill="#FBBF24"/>
+    
+    <!-- Card number dots -->
+    <g transform="translate(30, 100)">
+      <circle cx="10" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="25" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="40" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="55" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      
+      <circle cx="80" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="95" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="110" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      <circle cx="125" cy="0" r="4" fill="#FFFFFF" opacity="0.6"/>
+      
+      <text x="150" y="5" font-family="Arial" font-size="14" fill="#FFFFFF" font-weight="600">1234</text>
+    </g>
+    
+    <!-- Cardholder name -->
+    <rect x="30" y="140" width="100" height="12" rx="6" fill="#FFFFFF" opacity="0.3"/>
+    
+    <!-- Logo circles -->
+    <circle cx="260" cy="40" r="18" fill="#FFFFFF" opacity="0.4"/>
+    <circle cx="275" cy="40" r="18" fill="#FFFFFF" opacity="0.3"/>
+  </g>
+  
+  <!-- Lock icon -->
+  <g transform="translate(500, 280)">
+    <rect x="-15" y="5" width="30" height="25" rx="4" fill="#F59E0B"/>
+    <rect x="-10" y="0" width="20" height="15" rx="10" fill="none" stroke="#F59E0B" stroke-width="3"/>
+  </g>
+</svg>

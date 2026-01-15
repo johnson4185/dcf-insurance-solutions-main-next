@@ -1,0 +1,54 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brandGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="brandGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F8FAFC"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="500" cy="80" r="120" fill="url(#brandGrad2)" opacity="0.3"/>
+  <circle cx="100" cy="320" r="100" fill="url(#brandGrad2)" opacity="0.2"/>
+  
+  <!-- Main palette -->
+  <g transform="translate(150, 80)">
+    <!-- Palette board -->
+    <rect x="0" y="0" width="300" height="240" rx="20" fill="#FFFFFF" filter="drop-shadow(0 20px 40px rgba(0,0,0,0.1))"/>
+    
+    <!-- Color circles -->
+    <circle cx="60" cy="70" r="35" fill="#3B82F6"/>
+    <circle cx="150" cy="70" r="35" fill="#8B5CF6"/>
+    <circle cx="240" cy="70" r="35" fill="#EC4899"/>
+    
+    <circle cx="60" cy="170" r="35" fill="#10B981"/>
+    <circle cx="150" cy="170" r="35" fill="#F59E0B"/>
+    <circle cx="240" cy="170" r="35" fill="#EF4444"/>
+    
+    <!-- Palette icon -->
+    <g transform="translate(220, 10)">
+      <ellipse cx="30" cy="25" rx="25" ry="20" fill="url(#brandGrad1)" opacity="0.9"/>
+      <circle cx="20" cy="20" r="4" fill="#FFFFFF"/>
+      <circle cx="35" cy="18" r="4" fill="#FFFFFF"/>
+      <circle cx="25" cy="30" r="4" fill="#FFFFFF"/>
+      <circle cx="40" cy="28" r="4" fill="#FFFFFF"/>
+    </g>
+  </g>
+  
+  <!-- Brand elements floating -->
+  <g transform="translate(50, 40)">
+    <rect x="0" y="0" width="80" height="30" rx="8" fill="url(#brandGrad1)" opacity="0.8"/>
+    <text x="40" y="20" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle" font-weight="bold">LOGO</text>
+  </g>
+  
+  <g transform="translate(470, 280)">
+    <circle cx="20" cy="20" r="20" fill="#F59E0B" opacity="0.8"/>
+    <text x="20" y="26" font-family="Arial" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="bold">A</text>
+  </g>
+</svg>

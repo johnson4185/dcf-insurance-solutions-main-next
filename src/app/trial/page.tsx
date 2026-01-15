@@ -1,0 +1,340 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { Check, Shield, Clock, CreditCard, ArrowRight, CheckCircle } from "lucide-react";
+
+export default function TrialPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    phone: "",
+    jobTitle: "",
+    companySize: "",
+    product: "insurance-now",
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Implement trial signup logic
+    console.log("Trial signup:", formData);
+    setSubmitted(true);
+  };
+
+  const trialBenefits = [
+    "30 days full access to all features",
+    "No credit card required",
+    "Free implementation support",
+    "Access to all documentation",
+    "Live chat support included",
+    "Cancel anytime, no strings attached",
+  ];
+
+  const products = [
+    { value: "insurance-basic", label: "Insurance Basic" },
+    { value: "insurance-now", label: "Insurance Now (Recommended)" },
+    { value: "insurance-suite", label: "Insurance Suite" },
+  ];
+
+  const companySizes = [
+    { value: "1-10", label: "1-10 employees" },
+    { value: "11-50", label: "11-50 employees" },
+    { value: "51-200", label: "51-200 employees" },
+    { value: "201-500", label: "201-500 employees" },
+    { value: "501-1000", label: "501-1000 employees" },
+    { value: "1000+", label: "1000+ employees" },
+  ];
+
+  if (submitted) {
+    return (
+      <main className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-primary/10 via-background to-accent/5">
+        <div className="container-wide mx-auto px-4 md:px-8">
+          <ScrollFadeIn>
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="w-10 h-10 text-green-600" />
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-display">
+                Welcome to Your Free Trial!
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                We've sent your login credentials to <strong>{formData.email}</strong>
+              </p>
+              <div className="bg-card border border-border rounded-xl p-8 mb-8 text-left">
+                <h2 className="text-2xl font-bold text-foreground mb-4">What's Next?</h2>
+                <div className="space-y-4">
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Check Your Email</h3>
+                      <p className="text-muted-foreground text-sm">We've sent your login credentials and getting started guide</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Complete Setup</h3>
+                      <p className="text-muted-foreground text-sm">Follow the onboarding wizard to configure your account</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Explore Features</h3>
+                      <p className="text-muted-foreground text-sm">Start using all features with full access for 30 days</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link href="/resources/docs" className="btn-primary">
+                  View Documentation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link href="/resources/support" className="btn-outline">
+                  Contact Support
+                </Link>
+              </div>
+            </div>
+          </ScrollFadeIn>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="pt-16">
+      {/* Hero */}
+      <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
+        <div className="container-wide mx-auto px-4 md:px-8">
+          <ScrollFadeIn>
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-block px-4 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full mb-4">
+                30 DAYS FREE TRIAL
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 font-display">
+                Start Your Free Trial Today
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Experience the full power of DCF Insurance Solutions with no commitment
+              </p>
+              
+              {/* Trial Benefits */}
+              <div className="grid md:grid-cols-3 gap-4 mb-12">
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="font-semibold text-foreground">30 Days Full Access</p>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <CreditCard className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="font-semibold text-foreground">No Credit Card</p>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-4">
+                  <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="font-semibold text-foreground">Cancel Anytime</p>
+                </div>
+              </div>
+            </div>
+          </ScrollFadeIn>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="py-20 bg-background">
+        <div className="container-wide mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Form */}
+            <ScrollFadeIn>
+              <div className="bg-card border border-border rounded-xl p-8">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Sign up for free trial</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        required
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        required
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Work Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Company Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      required
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="jobTitle" className="block text-sm font-medium text-foreground mb-2">
+                      Job Title
+                    </label>
+                    <input
+                      type="text"
+                      id="jobTitle"
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.jobTitle}
+                      onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="companySize" className="block text-sm font-medium text-foreground mb-2">
+                      Company Size *
+                    </label>
+                    <select
+                      id="companySize"
+                      required
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.companySize}
+                      onChange={(e) => setFormData({ ...formData, companySize: e.target.value })}
+                    >
+                      <option value="">Select company size</option>
+                      {companySizes.map((size) => (
+                        <option key={size.value} value={size.value}>
+                          {size.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="product" className="block text-sm font-medium text-foreground mb-2">
+                      Which product would you like to try? *
+                    </label>
+                    <select
+                      id="product"
+                      required
+                      className="w-full px-4 py-2.5 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      value={formData.product}
+                      onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+                    >
+                      {products.map((product) => (
+                        <option key={product.value} value={product.value}>
+                          {product.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    Start Free Trial
+                  </button>
+
+                  <p className="text-sm text-muted-foreground text-center">
+                    By signing up, you agree to our{" "}
+                    <Link href="/terms" className="text-primary hover:underline">
+                      Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/privacy" className="text-primary hover:underline">
+                      Privacy Policy
+                    </Link>
+                  </p>
+                </form>
+              </div>
+            </ScrollFadeIn>
+
+            {/* Benefits */}
+            <ScrollFadeIn delay={0.2}>
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground mb-6">What's included in your trial</h2>
+                  <div className="space-y-4">
+                    {trialBenefits.map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                          <Check className="w-4 h-4 text-green-600" />
+                        </div>
+                        <p className="text-foreground">{benefit}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-primary/10 to-accent/5 rounded-xl p-6">
+                  <h3 className="font-bold text-foreground mb-2">Need help choosing?</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Not sure which product is right for you? Our sales team can help you find the perfect solution.
+                  </p>
+                  <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                    Talk to Sales
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="font-bold text-foreground mb-2">After your trial</h3>
+                  <p className="text-muted-foreground">
+                    Your trial will automatically expire after 30 days. You can upgrade to a paid plan anytime during or after your trial period. No credit card required to start.
+                  </p>
+                </div>
+              </div>
+            </ScrollFadeIn>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
