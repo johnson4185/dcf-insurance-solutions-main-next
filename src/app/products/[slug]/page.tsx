@@ -36,8 +36,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         title={product.hero.title}
         subtitle={product.hero.subtitle}
         description={product.hero.description}
-        features={product.hero.features}
-        cta={product.hero.cta}
+        features={product.hero.features}        image={product.hero.image}        cta={product.hero.cta}
         colorScheme={product.colorScheme}
       />
 

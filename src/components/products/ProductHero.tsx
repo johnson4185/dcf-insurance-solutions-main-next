@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { Monitor } from "lucide-react";
@@ -16,9 +17,10 @@ interface ProductHeroProps {
     secondary: { text: string; href: string };
   };
   colorScheme: string; // e.g., "blue", "indigo", "purple", "orange"
+  image?: { src: string; alt: string };
 }
 
-export default function ProductHero({ badge, title, subtitle, description, features, cta, colorScheme }: ProductHeroProps) {
+export default function ProductHero({ badge, title, subtitle, description, features, cta, colorScheme, image }: ProductHeroProps) {
   const Icon = badge.icon;
   
   const colorClasses = {
@@ -106,12 +108,22 @@ export default function ProductHero({ badge, title, subtitle, description, featu
 
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative">
             <div className={`relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br ${colors.iconBg}`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Monitor className={`w-20 h-20 ${colors.icon} mx-auto mb-4`} />
-                  <p className="text-sm text-gray-600">{title} Dashboard</p>
+              {image ? (
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <Monitor className={`w-20 h-20 ${colors.icon} mx-auto mb-4`} />
+                    <p className="text-sm text-gray-600">{title} Dashboard</p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </motion.div>
         </div>

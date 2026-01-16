@@ -5,7 +5,7 @@ import ProductsCTA from "@/components/products/ProductsCTA";
 
 export default function ProductsPage() {
   return (
-    <main>
+    <main className="bg-white">
       <ProductsHero />
       <ProductsGrid />
       <ProductsComparison />
