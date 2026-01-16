@@ -1,4 +1,4 @@
-import { Zap, Globe, Award, Building, Layers, TrendingUp, FileText, Users, ClipboardList, DollarSign, Monitor, Shield, CheckCircle, BarChart3, Globe2, Lock, Rocket, Smartphone, Settings, ClipboardCheck, Repeat, type LucideIcon } from "lucide-react";
+import { Zap, Globe, Award, Building, Layers, TrendingUp, FileText, Users, ClipboardList, DollarSign, Monitor, Shield, CheckCircle, BarChart3, Globe2, Smartphone, Settings, ClipboardCheck, type LucideIcon } from "lucide-react";
 import { ProductCard, CapabilityItem, FeatureItem, IdealForItem } from "@/types";
 
 export const allProducts: ProductCard[] = [
@@ -78,7 +78,7 @@ export const insuranceBasicContent = {
       tertiary: { text: "Compare Products", href: "/comparison" },
     },
     image: {
-      src: "/images/products/insurance-basic-hero.jpg",
+      src: "/images/products/basic-dashboard.svg",
       alt: "Insurance Basic platform dashboard",
     },
   },
@@ -189,7 +189,7 @@ export const insuranceNowContent = {
       tertiary: { text: "Compare Products", href: "/comparison" },
     },
     image: {
-      src: "/images/products/insurance-now.jpg",
+      src: "/images/products/now-dashboard.svg",
       alt: "Insurance Now platform dashboard",
     },
   },
@@ -296,7 +296,7 @@ export const insuranceSuiteContent = {
       tertiary: { text: "Compare Products", href: "/comparison" },
     },
     image: {
-      src: "/images/products/insurance-suite.jpg",
+      src: "/images/products/suite-dashboard.svg",
       alt: "Insurance Suite enterprise platform",
     },
   },
@@ -559,7 +559,7 @@ export const insuranceBuildModules: BuildModule[] = [
   },
   {
     id: "reinsurance",
-    icon: Repeat,
+    icon: Layers,
     name: "Reinsurance Module",
     category: "Advanced",
     description: "Reinsurance treaty and facultative management",

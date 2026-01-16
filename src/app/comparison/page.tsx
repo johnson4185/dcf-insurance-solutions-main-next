@@ -1,10 +1,10 @@
 'use client';
 
-import { comparisonTableData, comparisonPageContent } from '@/data/comparison.data';
-import { Check, X, Sparkles, ArrowRight, Shield, Zap, Users, Building2, Globe, BarChart3, Code, Award, Star, TrendingUp, Monitor } from 'lucide-react';
+import { comparisonTableData } from '@/data/comparison.data';
+import { Check, X, Sparkles, ArrowRight, Shield, Users, Building2, Globe, BarChart3, Code, Award } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const categoryIcons = {
   'CORE MODULES': Code,
@@ -16,7 +16,6 @@ const categoryIcons = {
 };
 
 export default function ComparisonPage() {
-  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

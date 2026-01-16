@@ -8,53 +8,26 @@ import { useState, useEffect } from "react";
 import { heroContent, stats } from "@/data/home.data";
 
 export default function HeroSection() {
-  const { badge, title, description, cta, videoSrc, posterImage, posterAlt } = heroContent;
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const { badge, title, description, cta, posterImage, posterAlt } = heroContent;
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Set client flag immediately to prevent hydration issues
     setIsClient(true);
-    // Delay video loading by 1 second to improve initial page load
-    const timer = setTimeout(() => setShouldLoadVideo(true), 1000);
-    return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className="relative min-h-[700px] md:min-h-[800px] overflow-hidden">
-      {/* Background Video (uses poster image as fallback) */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         {isClient && (
-          <>
-            {shouldLoadVideo ? (
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={posterImage}
-                aria-hidden="true"
-              >
-                <source src={videoSrc} type="video/mp4" />
-                {/* Fallback image for browsers that don't support video */}
-                <img
-                  src={posterImage}
-                  alt={posterAlt}
-                  className="w-full h-full object-cover"
-                />
-              </video>
-            ) : (
-              <Image
-                src={posterImage}
-                alt={posterAlt}
-                fill
-                className="object-cover"
-                priority
-                quality={75}
-              />
-            )}
-          </>
+          <Image
+            src={posterImage}
+            alt={posterAlt}
+            fill
+            className="object-cover"
+            priority
+            quality={75}
+          />
         )}
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/85 via-secondary/75 to-secondary/55" />
       </div>

@@ -38,7 +38,6 @@ export default function ProductsGrid() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allProducts.map((product, index) => {
             const Icon = product.icon;
-            const isEven = index % 2 === 0;
             
             return (
               <motion.div
@@ -102,7 +101,7 @@ export default function ProductsGrid() {
 
                   {/* Features */}
                   <div className="space-y-2.5 mb-6">
-                    {product.features.slice(0, 4).map((feature) => (
+                    {product.features?.slice(0, 4).map((feature) => (
                       <div 
                         key={feature} 
                         className="flex items-start gap-2.5"
@@ -121,7 +120,7 @@ export default function ProductsGrid() {
                       Best For
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {product.bestFor.map((item) => (
+                      {product.bestFor?.map((item) => (
                         <span
                           key={item}
                           className="inline-block px-2.5 py-1 bg-gray-50 text-xs text-gray-600 rounded-md font-medium border border-gray-200"

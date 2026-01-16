@@ -16,8 +16,26 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    console.log("Form submitted:", formData);
+    // TODO: Implement form submission to backend API
+    // When ready, replace with:
+    // await fetch('/api/contact', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(formData),
+    // });
+    
+    // For now, show success message
+    alert('Thank you! We will get back to you within 24 hours.');
+    
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+      interest: "general"
+    });
   };
 
   return (

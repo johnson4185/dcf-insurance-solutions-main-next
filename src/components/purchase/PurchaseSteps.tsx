@@ -34,7 +34,6 @@ export default function PurchaseSteps() {
               const Icon = step.icon;
               const isCompleted = currentStep > step.number;
               const isCurrent = currentStep === step.number;
-              const isUpcoming = currentStep < step.number;
 
               return (
                 <motion.div

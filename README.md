@@ -1,73 +1,194 @@
-# Welcome to your Lovable project
+# DCF Insurance Solutions - Next.js Application
 
-## Project info
+Enterprise insurance software platform built with Next.js, TypeScript, and modern web technologies.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Tech Stack
 
-## How can I edit this code?
+### Core Framework
+- **Next.js 15.1.6** - React framework with App Router for server-side rendering and routing
+- **React 18.3.1** - UI library for building component-based interfaces
+- **TypeScript 5.8.3** - Type-safe JavaScript for better developer experience
 
-There are several ways of editing your application.
+### UI & Styling
+- **Tailwind CSS 3.4** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components built on Radix UI
+- **Framer Motion 12.25** - Animation library for smooth transitions
+- **Lucide React** - Beautiful & consistent icon set
 
-**Use Lovable**
+### Form Handling & Validation
+- **React Hook Form 7.61** - Performant form library
+- **Zod 3.25** - TypeScript-first schema validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### State Management & Data Fetching
+- **TanStack Query 5.83** - Powerful data synchronization for React
 
-Changes made via Lovable will be committed automatically to this repo.
+### Development Tools
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
 
-**Use your preferred IDE**
+## 📁 Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+dcf-insurance-solutions-main-next/
+├── public/                      # Static assets
+│   ├── images/                  # Image assets
+│   │   ├── products/           # Product screenshots
+│   │   └── purchase/           # Purchase flow illustrations
+│   ├── videos/                 # Video assets
+│   └── robots.txt              # SEO robots file
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── layout.tsx          # Root layout with metadata
+│   │   ├── page.tsx            # Homepage
+│   │   ├── products/           # Product pages
+│   │   ├── comparison/         # Product comparison
+│   │   ├── purchase/           # Purchase flow
+│   │   ├── solutions/          # Solutions pages
+│   │   └── ...                 # Other routes
+│   ├── components/             # React components
+│   │   ├── layout/             # Layout components (Header, Footer)
+│   │   ├── home/               # Homepage sections
+│   │   ├── products/           # Product-related components
+│   │   ├── purchase/           # Purchase flow components
+│   │   ├── shared/             # Shared/reusable components
+│   │   └── ui/                 # shadcn/ui components
+│   ├── contexts/               # React contexts
+│   ├── data/                   # Static data & configuration
+│   │   ├── home.data.ts        # Homepage content
+│   │   ├── products.data.ts    # Product information
+│   │   ├── comparison.data.ts  # Comparison table data
+│   │   ├── navigation.data.ts  # Navigation structure
+│   │   └── site.config.ts      # Site-wide configuration
+│   ├── hooks/                  # Custom React hooks
+│   ├── lib/                    # Utility functions
+│   ├── styles/                 # Global styles
+│   └── types/                  # TypeScript type definitions
+├── components.json             # shadcn/ui configuration
+├── eslint.config.js            # ESLint configuration
+├── next.config.ts              # Next.js configuration
+├── package.json                # Dependencies & scripts
+├── postcss.config.mjs          # PostCSS configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+└── tsconfig.json               # TypeScript configuration
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js 18.x or higher
+- npm or yarn package manager
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Clone the repository
+git clone <repository-url>
 
-## What technologies are used for this project?
+# Navigate to the project directory
+cd dcf-insurance-solutions-main-next
 
-This project is built with:
+# Install dependencies
+npm install
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Development
 
-## How can I deploy this project?
+```bash
+# Start development server
+npm run dev
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+# Open http://localhost:3000 in your browser
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Building for Production
 
-Yes, you can!
+```bash
+# Create optimized production build
+npm run build
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Start production server
+npm start
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Other Commands
+
+```bash
+# Run ESLint
+npm run lint
+
+# Type check without emitting files
+npm run type-check
+```
+
+## 🎨 Design System
+
+The project uses a comprehensive design system built on:
+- **shadcn/ui** components for consistent UI elements
+- **Tailwind CSS** for utility-first styling
+- **CSS variables** for theme customization
+- **Custom fonts**: Inter, Plus Jakarta Sans, Space Grotesk
+
+## 📝 Code Style & Best Practices
+
+### TypeScript
+- Strict mode enabled for type safety
+- All functions and components are properly typed
+- No implicit `any` types allowed
+
+### Components
+- Use functional components with hooks
+- Implement proper prop types with TypeScript interfaces
+- Follow the "use client" directive for client-side components in App Router
+
+### File Organization
+- Group related files by feature (colocation)
+- Separate data/content from components
+- Use index exports for cleaner imports
+
+### Naming Conventions
+- **Components**: PascalCase (e.g., `ProductCard.tsx`)
+- **Files**: PascalCase for components, kebab-case for utilities
+- **Functions**: camelCase (e.g., `handleSubmit`)
+- **Constants**: UPPER_SNAKE_CASE for truly constant values
+
+## 🔒 Security Features
+
+- Content Security Policy headers configured
+- X-Frame-Options set to DENY
+- XSS Protection enabled
+- Console logs removed in production builds
+
+## 🌐 Deployment
+
+The application is optimized for deployment on:
+- **Vercel** (recommended for Next.js)
+- **Any Node.js hosting platform**
+- **Docker containers**
+
+### Environment Variables
+
+Create a `.env.local` file for local development:
+
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+NEXT_PUBLIC_SITE_URL=your_site_url
+```
+
+## 📄 License
+
+Copyright © 2026 DCF Insurance Solutions. All rights reserved.
+
+## 🤝 Contributing
+
+This is a private enterprise project. For contribution guidelines, contact the development team.
+
+## 📧 Support
+
+For technical support or questions:
+- Email: support@dcf.insurance
+- Documentation: [Coming Soon]
+
+---
+
+Built with ❤️ by the DCF Engineering Team

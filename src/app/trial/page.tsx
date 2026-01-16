@@ -21,14 +21,13 @@ export default function TrialPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement trial signup logic
-    console.log("Trial signup:", formData);
+    // TODO: Implement trial signup submission to backend API
+    // Example: await fetch('/api/trial', { method: 'POST', body: JSON.stringify(formData) })
     setSubmitted(true);
   };
 
   const trialBenefits = [
     "30 days full access to all features",
-    "No credit card required",
     "Free implementation support",
     "Access to all documentation",
     "Live chat support included",

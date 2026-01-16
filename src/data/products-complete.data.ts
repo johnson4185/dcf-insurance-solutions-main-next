@@ -1,7 +1,7 @@
 import { 
-  Zap, Globe, Award, Building, Layers, TrendingUp, FileText, Users, ClipboardList, 
-  DollarSign, Monitor, Shield, CheckCircle, BarChart3, Globe2, Lock, Rocket, 
-  Smartphone, Settings, ClipboardCheck, Repeat, User, Briefcase, Activity, Target
+  Zap, Globe, Award, Building, Layers, TrendingUp, FileText, Users,
+  DollarSign, Monitor, Shield, CheckCircle, BarChart3, Globe2, Lock,
+  Smartphone, Settings, ClipboardCheck, Briefcase, Activity, Target
 } from "lucide-react";
 import type { CapabilityItem, FeatureItem, IdealForItem } from "@/types";
 
@@ -62,7 +62,7 @@ export const productsData: Record<string, ProductData> = {
       subtitle: "Starting at SAR 2,500/month",
       description: "Essential coverage, rapid-to-value experiences designed for small insurers looking to launch quickly, and long-term flexibility enabling you to migrate easily to advanced products.",
       features: ["Policy Admin", "Billing Center", "Pricing Center", "API Access", "Mobile App", "24/7 Support"],
-      image: { src: "/images/insurancebasic.png", alt: "Insurance Basic platform dashboard" },
+      image: { src: "/images/products/basic-dashboard.svg", alt: "Insurance Basic platform dashboard" },
       cta: {
         primary: { text: "Start Free Trial", href: "/trial" },
         secondary: { text: "Buy Now", href: "/purchase" },
@@ -108,7 +108,7 @@ export const productsData: Record<string, ProductData> = {
       description: "Insurance Basic is ideal for small to mid-size insurers looking to digitize.",
       items: [
         { title: "Small Insurers", description: "Companies with 10-100 employees launching digital operations", icon: Building },
-        { title: "Pilot Programs", description: "Testing new insurance products or entering new markets", icon: Rocket },
+        { title: "Pilot Programs", description: "Testing new insurance products or entering new markets", icon: Zap },
         { title: "Focused Operations", description: "Insurers specializing in specific product lines", icon: Target },
       ],
     },

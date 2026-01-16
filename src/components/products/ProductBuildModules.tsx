@@ -11,7 +11,7 @@ interface ProductBuildModulesProps {
   colorScheme: string;
 }
 
-export default function ProductBuildModules({ colorScheme }: ProductBuildModulesProps) {
+export default function ProductBuildModules({ }: ProductBuildModulesProps) {
   const [selectedModules, setSelectedModules] = useState<Set<string>>(new Set());
   const [activeCategory, setActiveCategory] = useState<string>("All");
 

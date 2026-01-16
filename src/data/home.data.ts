@@ -1,6 +1,22 @@
-import { Heart, Users, Car, Plane, Home, Building, Zap, Globe, Award, Shield, Briefcase, Network } from "lucide-react";
+/**
+ * Home Page Data Configuration
+ * 
+ * This file contains all static content and configuration data for the homepage.
+ * Centralizing content here makes it easier to maintain and update marketing copy.
+ * 
+ * @module data/home.data
+ */
+
+import { 
+  Heart, Users, Car, Plane, Home, Building, 
+  Zap, Globe, Award, Shield, Briefcase 
+} from "lucide-react";
 import { IndustryItem, StatItem, ProductCard, CategoryCard } from "@/types";
 
+/**
+ * Hero Section Content
+ * Main value proposition displayed prominently at the top of the homepage
+ */
 export const heroContent = {
   badge: "Trusted by Leading Insurers Worldwide",
   title: "Enterprise Insurance Products for Global Markets",
@@ -9,11 +25,18 @@ export const heroContent = {
     primary: { text: "Get Started", href: "/comparison" },
     secondary: { text: "Explore Products", href: "/products" },
   },
-  videoSrc: "/videos/hero.mp4",
   posterImage: "/images/hero-image.jpg",
   posterAlt: "Insurance professionals collaborating in a modern office",
-};
+} as const;
 
+/**
+ * Statistics Section
+ * Key metrics that demonstrate company credibility and scale
+ */
+/**
+ * Statistics Section
+ * Key metrics that demonstrate company credibility and scale
+ */
 export const stats: StatItem[] = [
   { value: "50+", label: "Insurance Clients" },
   { value: "5M+", label: "Policies Managed" },
@@ -21,6 +44,10 @@ export const stats: StatItem[] = [
   { value: "24/7", label: "Global Support" },
 ];
 
+/**
+ * Why DCF Section
+ * Core value proposition explaining the platform's benefits
+ */
 export const whyDCFContent = {
   badge: "WHY DCF",
   title: "Proven insurance platforms for modern insurers",
@@ -35,8 +62,12 @@ export const whyDCFContent = {
     linkText: "Contact Us",
     href: "/contact",
   },
-};
+} as const;
 
+/**
+ * Digital Transformation Section
+ * Highlights the comprehensive technology stack offered
+ */
 export const digitalTransformationContent = {
   badge: "Digital Transformation",
   title: "Accelerate your insurance digital transformation",
@@ -53,8 +84,12 @@ export const digitalTransformationContent = {
     src: "/images/digital-dashboard.jpg",
     alt: "Digital insurance dashboard",
   },
-};
+} as const;
 
+/**
+ * Team Collaboration Section
+ * Emphasizes cross-functional collaboration features
+ */
 export const teamCollaborationContent = {
   badge: "Team Collaboration",
   title: "Built for collaboration across your organization",
@@ -63,8 +98,12 @@ export const teamCollaborationContent = {
     src: "/images/team-collaboration.jpg",
     alt: "Team collaboration in modern office",
   },
-};
+} as const;
 
+/**
+ * Industries Served
+ * List of insurance verticals the platform supports
+ */
 export const industries: IndustryItem[] = [
   { icon: Heart, name: "Health Insurance" },
   { icon: Users, name: "Life Insurance" },
@@ -74,6 +113,10 @@ export const industries: IndustryItem[] = [
   { icon: Building, name: "Third Party Administrators" },
 ];
 
+/**
+ * Products Showcase
+ * Featured products displayed on the homepage
+ */
 export const productsShowcase: ProductCard[] = [
   {
     name: "Insurance Basic",
@@ -98,14 +141,22 @@ export const productsShowcase: ProductCard[] = [
   },
 ];
 
+/**
+ * Products Section Header
+ * Section title and CTA for the products showcase
+ */
 export const productsSection = {
   badge: "Our Solutions",
   title: "Choose Your Product",
   description: "Select the right insurance product for your organization's needs",
   ctaText: "View All Products",
   ctaHref: "/products",
-};
+} as const;
 
+/**
+ * Closing CTA Section
+ * Final call-to-action at the bottom of the homepage
+ */
 export const closingCTAContent = {
   title: "Ready to modernize your insurance operations?",
   description: "Join leading insurers worldwide who trust DCF for their digital transformation journey.",
@@ -113,8 +164,12 @@ export const closingCTAContent = {
     primary: { text: "Contact Sales", href: "/comparison" },
     secondary: { text: "Compare Products", href: "/products" },
   },
-};
+} as const;
 
+/**
+ * Solutions Category Cards
+ * Different customer segments and their specific needs
+ */
 export const solutionsCategoryCards: CategoryCard[] = [
   {
     icon: Building,

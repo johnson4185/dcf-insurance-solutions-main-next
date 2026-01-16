@@ -1,5 +1,18 @@
+/**
+ * Navigation Configuration
+ * 
+ * Defines the main navigation structure for the website.
+ * Used in the header component to render navigation menus with dropdowns.
+ * 
+ * @module data/navigation.data
+ */
+
 import { NavItem } from "@/types";
 
+/**
+ * Main navigation menu items
+ * Each item can have nested children for dropdown menus
+ */
 export const mainNavigation: NavItem[] = [
   {
     label: "Products",

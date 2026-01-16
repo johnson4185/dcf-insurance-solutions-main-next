@@ -1,4 +1,11 @@
-import { ComparisonCategory } from "@/types";
+/**
+ * Product Comparison Data
+ * 
+ * Contains all comparison table data for products.
+ * Defines features and availability across different product tiers.
+ * 
+ * @module data/comparison.data
+ */
 
 export const comparisonPageContent = {
   title: "Product Comparison",
@@ -14,7 +21,7 @@ export const comparisonTableData = {
       link: "/products/insurance-basic", 
       highlighted: false,
       color: "blue",
-      image: "/images/products/basic-dashboard.jpg"
+      image: "/images/products/basic-dashboard.svg"
     },
     { 
       name: "Insurance Now", 
@@ -23,7 +30,7 @@ export const comparisonTableData = {
       link: "/products/insurance-now", 
       highlighted: true,
       color: "purple",
-      image: "/images/products/now-dashboard.jpg"
+      image: "/images/products/now-dashboard.svg"
     },
     { 
       name: "Insurance Suite", 
@@ -32,7 +39,7 @@ export const comparisonTableData = {
       link: "/products/insurance-suite", 
       highlighted: false,
       color: "amber",
-      image: "/images/products/suite-dashboard.jpg"
+      image: "/images/products/suite-dashboard.svg"
     },
     { 
       name: "TPA Platform", 
@@ -41,7 +48,7 @@ export const comparisonTableData = {
       link: "/products/tpa-platform", 
       highlighted: false,
       color: "slate",
-      image: "/images/products/tpa-dashboard.jpg"
+      image: "/images/products/tpa-dashboard.svg"
     },
   ],
   categories: [

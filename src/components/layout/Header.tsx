@@ -1,3 +1,17 @@
+/**
+ * Header Component
+ * 
+ * Main navigation header with responsive design.
+ * Features:
+ * - Desktop navigation with dropdown menus
+ * - Mobile hamburger menu
+ * - Active route highlighting
+ * - Sticky positioning with backdrop blur
+ * - CTA buttons for sign-in and contact sales
+ * 
+ * @component
+ */
+
 "use client";
 
 import Link from "next/link";
@@ -7,18 +21,25 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { mainNavigation } from "@/data/navigation.data";
 
 export default function Header() {
+  // State management for mobile menu and dropdowns
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
+  /**
+   * Check if a given path matches the current route
+   */
   const isActive = (path: string) => pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-wide mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-18 md:h-20">
+          {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold font-display bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">DCF</span>
+            <span className="text-2xl font-bold font-display bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              DCF
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,6 +66,8 @@ export default function Header() {
                     />
                   )}
                 </Link>
+                
+                {/* Dropdown Menu */}
                 {item.children && openDropdown === item.label && (
                   <div className="absolute top-full left-0 pt-4">
                     <div className="bg-card border border-border rounded-2xl shadow-xl py-4 min-w-[280px] animate-in fade-in-0 zoom-in-95 duration-200">
@@ -64,8 +87,13 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Desktop Action Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button suppressHydrationWarning className="p-2 text-foreground hover:text-blue-600 transition-colors" aria-label="Search">
+            <button 
+              suppressHydrationWarning 
+              className="p-2 text-foreground hover:text-blue-600 transition-colors" 
+              aria-label="Search"
+            >
               <Search className="w-5 h-5" />
             </button>
             <Link 
@@ -73,12 +101,14 @@ export default function Header() {
               className="font-semibold text-blue-600 px-3 py-2 rounded-md hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all"
             >
               Sign in
-            </Link>            <Link
+            </Link>
+            <Link
               href="/contact"
               className="px-5 py-2.5 bg-blue-600 text-white text-[15px] font-medium rounded-md hover:bg-blue-700 transition-colors"
             >
               Contact Sales
-            </Link>          </div>
+            </Link>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -120,10 +150,18 @@ export default function Header() {
                 </div>
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
-                <Link href="/signin" className="text-sm font-medium text-foreground" onClick={() => setIsMenuOpen(false)}>
+                <Link 
+                  href="/signin" 
+                  className="text-sm font-medium text-foreground" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Sign in
                 </Link>
-                <Link href="/contact" className="btn-primary text-sm" onClick={() => setIsMenuOpen(false)}>
+                <Link 
+                  href="/contact" 
+                  className="btn-primary text-sm" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Contact Sales
                 </Link>
               </div>
