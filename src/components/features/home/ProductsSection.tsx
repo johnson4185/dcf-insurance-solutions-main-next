@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { ScrollFadeIn, StaggerContainer, StaggerItem } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn, StaggerContainer, StaggerItem } from "@/components/common/ScrollAnimations";
 import { productsShowcase, productsSection } from "@/data/home.data";
 
 export default function ProductsSection() {

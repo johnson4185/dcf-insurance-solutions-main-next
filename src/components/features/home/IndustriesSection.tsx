@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { industries } from "@/data/home.data";
 import { Sparkles } from "lucide-react";
 

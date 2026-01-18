@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { Check } from "lucide-react";
 
 interface Integration {

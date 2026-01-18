@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { ArrowRight, Award, Users, TrendingUp, Shield, Zap, Globe } from "lucide-react";
 
 export default function WhyDCFPage() {

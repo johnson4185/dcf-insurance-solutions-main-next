@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { closingCTAContent } from "@/data/home.data";
 
 export default function CTASection() {

@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/data/site.config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ErrorBoundary } from "@/components/common/ErrorBoundary";
 import "@/styles/globals.css";
 
 // Font optimization - only load required character sets and weights

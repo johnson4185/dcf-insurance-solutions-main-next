@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import type { CapabilityItem } from "@/types";
 
 interface ProductCapabilitiesProps {

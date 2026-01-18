@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function ContactPage() {

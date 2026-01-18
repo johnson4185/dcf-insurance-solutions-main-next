@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { digitalTransformationContent } from "@/data/home.data";
 
 export default function DigitalTransformationSection() {

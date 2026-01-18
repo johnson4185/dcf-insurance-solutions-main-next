@@ -39,14 +39,21 @@ Organized by feature and scope:
 #### `/components/layout`
 Global layout components (Header, Footer) used across all pages.
 
-#### `/components/home`, `/components/products`, etc.
-Feature-specific components grouped by route.
+#### `/components/features`
+Feature-specific components grouped by route:
+- `/features/home` - Homepage sections
+- `/features/products` - Product-related components
+- `/features/purchase` - Purchase flow components
 
-#### `/components/shared`
-Reusable components used across multiple features.
+#### `/components/common`
+Reusable components used across multiple features:
+- `ScrollAnimations.tsx` - Scroll-based animations
+- `ErrorBoundary.tsx` - Error handling wrapper
+- `CTASection.tsx` - Unified call-to-action component
 
 #### `/components/ui`
 shadcn/ui library components - low-level UI primitives.
+Unused components are archived in `/ui/_unused` for future use.
 
 ### `/src/data` - Static Content
 - **Purpose**: Centralize all static content and configuration
@@ -90,7 +97,7 @@ Application-wide state management (use sparingly).
 
 ### 2. Data/View Separation
 ```tsx
-// data/products.data.ts - Data layer
+// data/products.data.ts - Data layer (consolidated from multiple files)
 export const products = [...];
 
 // components/ProductList.tsx - View layer

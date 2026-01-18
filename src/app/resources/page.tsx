@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { ArrowRight, BookOpen, Code, FileText, Headphones, Video, Download } from "lucide-react";
 
 export default function ResourcesPage() {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 
 export default function ProductsCTA() {
   return (

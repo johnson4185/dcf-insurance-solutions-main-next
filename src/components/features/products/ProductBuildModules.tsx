@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, X, AlertCircle, ShoppingCart } from "lucide-react";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { insuranceBuildModules, type BuildModule } from "@/data/build-modules.data";
 
 interface ProductBuildModulesProps {

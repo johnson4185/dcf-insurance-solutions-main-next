@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import type { FeatureItem } from "@/types";
 
 interface ProductDigitalExperienceProps {

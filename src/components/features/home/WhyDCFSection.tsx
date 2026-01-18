@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { ScrollFadeIn, StaggerContainer, StaggerItem } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn, StaggerContainer, StaggerItem } from "@/components/common/ScrollAnimations";
 import { whyDCFContent } from "@/data/home.data";
 import { solutions } from "@/data/solutions.data";
 

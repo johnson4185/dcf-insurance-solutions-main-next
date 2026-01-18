@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 import { allProducts, productsOverviewContent } from "@/data/products.data";
-import { ScrollFadeIn } from "@/components/shared/ScrollAnimations";
+import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 
 export default function ProductsGrid() {
   const { sectionTitle, sectionDescription } = productsOverviewContent;
