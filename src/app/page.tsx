@@ -1,27 +1,27 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
-import HeroSection from "@/components/features/home/HeroSection";
+import HeroSection from "@/features/home/HeroSection";
 
 // Lazy load sections below the fold for better initial page load performance
 // These components will only be downloaded when they're about to appear on screen
-const WhyDCFSection = dynamic(() => import("@/components/features/home/WhyDCFSection"), {
+const WhyDCFSection = dynamic(() => import("@/features/home/WhyDCFSection"), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 });
 
-const DigitalTransformationSection = dynamic(() => import("@/components/features/home/DigitalTransformationSection"), {
+const DigitalTransformationSection = dynamic(() => import("@/features/home/DigitalTransformationSection"), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 });
 
-const IndustriesSection = dynamic(() => import("@/components/features/home/IndustriesSection"), {
+const IndustriesSection = dynamic(() => import("@/features/home/IndustriesSection"), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 });
 
-const ProductsSection = dynamic(() => import("@/components/features/home/ProductsSection"), {
+const ProductsSection = dynamic(() => import("@/features/home/ProductsSection"), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 });
 
-const CTASection = dynamic(() => import("@/components/features/home/CTASection"), {
+const CTASection = dynamic(() => import("@/features/home/CTASection"), {
   loading: () => <div className="h-64 bg-muted/20 animate-pulse" />,
 });
 

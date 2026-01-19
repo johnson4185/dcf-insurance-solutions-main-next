@@ -2,14 +2,14 @@
 
 import { use } from "react";
 import { notFound } from "next/navigation";
-import ProductHero from "@/components/features/products/ProductHero";
-import ProductStats from "@/components/features/products/ProductStats";
-import ProductCapabilities from "@/components/features/products/ProductCapabilities";
-import ProductDigitalExperience from "@/components/features/products/ProductDigitalExperience";
-import ProductIntegrations from "@/components/features/products/ProductIntegrations";
-import ProductIdealFor from "@/components/features/products/ProductIdealFor";
-import ProductCTA from "@/components/features/products/ProductCTA";
-import ProductBuildModules from "@/components/features/products/ProductBuildModules";
+import ProductHero from "@/features/products/ProductHero";
+import ProductStats from "@/features/products/ProductStats";
+import ProductCapabilities from "@/features/products/ProductCapabilities";
+import ProductDigitalExperience from "@/features/products/ProductDigitalExperience";
+import ProductIntegrations from "@/features/products/ProductIntegrations";
+import ProductIdealFor from "@/features/products/ProductIdealFor";
+import ProductCTA from "@/features/products/ProductCTA";
+import ProductBuildModules from "@/features/products/ProductBuildModules";
 import { getProductBySlug } from "@/data/products.data";
 
 interface ProductPageProps {

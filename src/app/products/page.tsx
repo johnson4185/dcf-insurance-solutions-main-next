@@ -1,19 +1,19 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
-import ProductsHero from "@/components/features/products/ProductsHero";
+import ProductsHero from "@/features/products/ProductsHero";
 import type { Metadata } from 'next';
 
 // Lazy load components below the fold
-const ProductsGrid = dynamic(() => import("@/components/features/products/ProductsGrid"), {
+const ProductsGrid = dynamic(() => import("@/features/products/ProductsGrid"), {
   loading: () => <div className="h-screen bg-muted/20 animate-pulse" />,
 });
 
-const ProductsComparison = dynamic(() => import("@/components/features/products/ProductsComparison"), {
+const ProductsComparison = dynamic(() => import("@/features/products/ProductsComparison"), {
   loading: () => <div className="h-96 bg-muted/20 animate-pulse" />,
 });
 
-const ProductsCTA = dynamic(() => import("@/components/features/products/ProductsCTA"), {
+const ProductsCTA = dynamic(() => import("@/features/products/ProductsCTA"), {
   loading: () => <div className="h-64 bg-muted/20 animate-pulse" />,
 });
 
