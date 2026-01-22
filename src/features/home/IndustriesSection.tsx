@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
 import { industries } from "@/data/home.data";
 import { Sparkles } from "lucide-react";
@@ -78,7 +79,7 @@ export default function IndustriesSection() {
       </div>
 
       {/* Watermark */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[180px] font-black text-gray-900/12 select-none pointer-events-none whitespace-nowrap tracking-wide">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[180px] font-black text-gray-500/8 select-none pointer-events-none whitespace-nowrap tracking-wide">
         INDUSTRIES
       </div>
 
@@ -154,35 +155,37 @@ export default function IndustriesSection() {
                     />
                     
                     {/* Card */}
-                    <motion.div
-                      animate={{
-                        borderColor: isHovered ? "#3b82f6" : "#e5e7eb",
-                        boxShadow: isHovered 
-                          ? "0 20px 50px rgba(59, 130, 246, 0.25)" 
-                          : "0 4px 15px rgba(0, 0, 0, 0.08)"
-                      }}
-                      className="relative bg-white/70 backdrop-blur-xl rounded-2xl p-5 border-2 w-44 shadow-sm"
-                    >
-                      {/* Icon Circle */}
-                      <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mx-auto mb-3 shadow-md">
-                        <industry.icon className="w-7 h-7 text-white" strokeWidth={2} />
-                      </div>
+                    <Link href="/products" className="block">
+                      <motion.div
+                        animate={{
+                          borderColor: isHovered ? "#3b82f6" : "#e5e7eb",
+                          boxShadow: isHovered 
+                            ? "0 20px 50px rgba(59, 130, 246, 0.25)" 
+                            : "0 4px 15px rgba(0, 0, 0, 0.08)"
+                        }}
+                        className="relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border-2 w-52 shadow-sm cursor-pointer"
+                      >
+                        {/* Icon Circle */}
+                        <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mx-auto mb-4 shadow-md">
+                          <industry.icon className="w-8 h-8 text-white" strokeWidth={2} />
+                        </div>
 
-                      {/* Text */}
-                      <h3 className="font-bold text-gray-900 text-sm text-center mb-2 leading-tight">
-                        {industry.name}
-                      </h3>
+                        {/* Text */}
+                        <h3 className="font-bold text-gray-900 text-base text-center mb-3 leading-tight">
+                          {industry.name}
+                        </h3>
 
-                      {/* Status Bar */}
-                      <div className="h-1 bg-gray-100 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: "50%" }}
-                          animate={{ width: isHovered ? "100%" : "50%" }}
-                          className="h-full bg-blue-500 rounded-full"
-                          transition={{ duration: 0.4 }}
-                        />
-                      </div>
-                    </motion.div>
+                        {/* Status Bar */}
+                        <div className="h-1 bg-gray-100 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: "50%" }}
+                            animate={{ width: isHovered ? "100%" : "50%" }}
+                            className="h-full bg-blue-500 rounded-full"
+                            transition={{ duration: 0.4 }}
+                          />
+                        </div>
+                      </motion.div>
+                    </Link>
                   </motion.div>
                 </motion.div>
               );

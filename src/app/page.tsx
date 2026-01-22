@@ -43,6 +43,13 @@ export default function HomePage() {
         <HeroSection />
       </ErrorBoundary>
 
+      {/* Industries section placed right after hero */}
+      <ErrorBoundary>
+        <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
+          <IndustriesSection />
+        </Suspense>
+      </ErrorBoundary>
+
       {/* Below-fold sections lazy load to improve initial page performance */}
       <ErrorBoundary>
         <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
@@ -53,12 +60,6 @@ export default function HomePage() {
       <ErrorBoundary>
         <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
           <DigitalTransformationSection />
-        </Suspense>
-      </ErrorBoundary>
-
-      <ErrorBoundary>
-        <Suspense fallback={<div className="h-96 bg-muted/20 animate-pulse" />}>
-          <IndustriesSection />
         </Suspense>
       </ErrorBoundary>
 
