@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Building, Globe, Palette, Upload, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, ArrowRight, ArrowLeft, Mail, Phone } from "lucide-react";
+import { Building, Globe, Palette, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, Mail } from "lucide-react";
 
 export default function PurchasePage() {
   const router = useRouter();
@@ -69,13 +69,7 @@ export default function PurchasePage() {
     { id: "indigo", name: "Deep Indigo", colors: ["#6366F1", "#4F46E5", "#4338CA"] },
   ];
 
-  const handleNext = () => {
-    if (currentStep < 5) setCurrentStep(currentStep + 1);
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
-  };
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,8 +78,6 @@ export default function PurchasePage() {
     console.log("Form submitted:", formData);
     router.push("/purchase/success");
   };
-
-  const selectedTheme = colorThemes.find(t => t.id === formData.colorTheme);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50">

@@ -50,8 +50,6 @@ export const mainNavigation: NavItem[] = [
     href: "/resources",
     children: [
       { label: "Documentation", href: "/resources/docs" },
-      { label: "API Reference", href: "/resources/api" },
-      { label: "Blog", href: "/resources/blog" },
       { label: "Support", href: "/resources/support" },
     ],
   },

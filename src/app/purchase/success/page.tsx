@@ -119,6 +119,7 @@ export default function SuccessPage() {
       
       return () => clearTimeout(completeTimer);
     }
+    return;
   }, [setupStep, setupComplete]);
 
   return (

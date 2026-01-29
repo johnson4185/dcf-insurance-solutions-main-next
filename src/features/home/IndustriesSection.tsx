@@ -79,7 +79,7 @@ export default function IndustriesSection() {
       </div>
 
       {/* Watermark */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[180px] font-black text-gray-500/8 select-none pointer-events-none whitespace-nowrap tracking-wide">
+      <div className="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 text-[160px] md:text-[180px] lg:text-[200px] font-black text-gray-500/15 select-none pointer-events-none whitespace-nowrap tracking-wide z-0">
         INDUSTRIES
       </div>
 

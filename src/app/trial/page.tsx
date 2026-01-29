@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Building, Globe, Palette, Upload, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, ArrowRight, ArrowLeft, Mail, Phone, AlertCircle, Info } from "lucide-react";
+import { Palette, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, Mail, Phone, Info } from "lucide-react";
 
 export default function TrialPage() {
   const router = useRouter();

@@ -2,16 +2,16 @@
 
 import Link from "next/link";
 import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
-import { ArrowRight, BookOpen, Code, FileText, Headphones, Video, Download } from "lucide-react";
+import { ArrowRight, BookOpen, Headphones, Video, Download } from "lucide-react";
 
 export default function ResourcesPage() {
   const resourceCategories = [
     {
       icon: BookOpen,
       title: "Documentation",
-      description: "Comprehensive guides and API documentation",
+      description: "Comprehensive guides and product documentation",
       href: "/resources/docs",
-      items: ["Getting Started", "API Reference", "Best Practices"]
+      items: ["Getting Started", "Product Guides", "Best Practices"]
     },
     {
       icon: Video,
@@ -19,20 +19,6 @@ export default function ResourcesPage() {
       description: "Step-by-step video guides and demos",
       href: "/resources/videos",
       items: ["Product Overview", "Integration Guide", "Admin Training"]
-    },
-    {
-      icon: Code,
-      title: "Developer Portal",
-      description: "APIs, SDKs, and code samples",
-      href: "/resources/api",
-      items: ["REST API", "Webhooks", "Sample Code"]
-    },
-    {
-      icon: FileText,
-      title: "Blog & Articles",
-      description: "Industry insights and product updates",
-      href: "/resources/blog",
-      items: ["Latest News", "Case Studies", "Industry Trends"]
     },
     {
       icon: Download,
@@ -46,7 +32,7 @@ export default function ResourcesPage() {
       title: "Support Center",
       description: "Get help from our support team",
       href: "/resources/support",
-      items: ["Submit Ticket", "Live Chat", "Knowledge Base"]
+      items: ["Submit Ticket", "Knowledge Base"]
     }
   ];
 
@@ -144,10 +130,10 @@ export default function ResourcesPage() {
             
             <ScrollFadeIn delay={0.3}>
               <div className="bg-card border border-border rounded-lg p-6">
-                <div className="text-sm text-primary font-semibold mb-2">API</div>
-                <h3 className="font-bold text-foreground mb-2">API Documentation</h3>
-                <p className="text-muted-foreground text-sm mb-4">Complete API reference with code examples and authentication guides.</p>
-                <Link href="/resources/api" className="text-primary font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+                <div className="text-sm text-primary font-semibold mb-2">DOCUMENTATION</div>
+                <h3 className="font-bold text-foreground mb-2">Developer & API Guides</h3>
+                <p className="text-muted-foreground text-sm mb-4">Reference, authentication, and integration examples for developers.</p>
+                <Link href="/resources/docs" className="text-primary font-semibold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
                   View Docs
                   <ArrowRight className="w-3 h-3" />
                 </Link>
