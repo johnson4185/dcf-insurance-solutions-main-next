@@ -29,10 +29,9 @@ export const mainNavigation: NavItem[] = [
     label: "Solutions",
     href: "/solutions",
     children: [
-      { label: "By Industry", href: "/solutions#industry" },
+      { label: "By Industry", href: "/industries" },
       { label: "By Use Case", href: "/solutions#use-case" },
-      { label: "For Enterprise", href: "/solutions#enterprise" },
-      { label: "For SMBs", href: "/solutions#smb" },
+      { label: "For Enterprise", href: "/products/insurance-build" },
     ],
   },
   {
@@ -50,6 +49,7 @@ export const mainNavigation: NavItem[] = [
     href: "/resources",
     children: [
       { label: "Documentation", href: "/resources/docs" },
+      { label: "FAQ", href: "/resources/faq" },
       { label: "Support", href: "/resources/support" },
     ],
   },

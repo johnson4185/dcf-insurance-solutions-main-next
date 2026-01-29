@@ -93,7 +93,7 @@ export default function IndustriesSection() {
             className="inline-flex items-center gap-2 text-blue-600 font-semibold text-xs uppercase tracking-wider mb-3 px-4 py-2 bg-white rounded-full shadow-md border border-blue-100"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Industries We Serve</span>
+            <span>By Industry</span>
           </motion.div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
             One Platform, <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">Every Vertical</span>
@@ -155,16 +155,15 @@ export default function IndustriesSection() {
                     />
                     
                     {/* Card */}
-                    <Link href="/products" className="block">
-                      <motion.div
-                        animate={{
-                          borderColor: isHovered ? "#3b82f6" : "#e5e7eb",
-                          boxShadow: isHovered 
-                            ? "0 20px 50px rgba(59, 130, 246, 0.25)" 
-                            : "0 4px 15px rgba(0, 0, 0, 0.08)"
-                        }}
-                        className="relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border-2 w-52 shadow-sm cursor-pointer"
-                      >
+                    <motion.div
+                      animate={{
+                        borderColor: isHovered ? "#3b82f6" : "#e5e7eb",
+                        boxShadow: isHovered 
+                          ? "0 20px 50px rgba(59, 130, 246, 0.25)" 
+                          : "0 4px 15px rgba(0, 0, 0, 0.08)"
+                      }}
+                      className="relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border-2 w-56 shadow-sm flex flex-col items-center"
+                    >
                         {/* Icon Circle */}
                         <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mx-auto mb-4 shadow-md">
                           <industry.icon className="w-8 h-8 text-white" strokeWidth={2} />
@@ -185,7 +184,6 @@ export default function IndustriesSection() {
                           />
                         </div>
                       </motion.div>
-                    </Link>
                   </motion.div>
                 </motion.div>
               );

@@ -16,6 +16,14 @@ export interface IndustryItem {
   name: string;
 }
 
+export interface IndustryDetail {
+  icon: LucideIcon;
+  name: string;
+  description: string;
+  highlights?: string[];
+  ctaHref: string;
+}
+
 export interface ProductCard {
   name: string;
   description: string;

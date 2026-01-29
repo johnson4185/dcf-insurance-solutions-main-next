@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ScrollFadeIn } from "@/components/common/ScrollAnimations";
-import { ArrowRight, BookOpen, Headphones, Video, Download } from "lucide-react";
+import { ArrowRight, BookOpen, Headphones, Video, Download, HelpCircle } from "lucide-react";
 
 export default function ResourcesPage() {
   const resourceCategories = [
@@ -12,6 +12,13 @@ export default function ResourcesPage() {
       description: "Comprehensive guides and product documentation",
       href: "/resources/docs",
       items: ["Getting Started", "Product Guides", "Best Practices"]
+    },
+    {
+      icon: HelpCircle,
+      title: "FAQ",
+      description: "Quick answers to common questions",
+      href: "/resources/faq",
+      items: ["Pricing & Plans", "Security & Compliance", "Implementation"]
     },
     {
       icon: Video,
