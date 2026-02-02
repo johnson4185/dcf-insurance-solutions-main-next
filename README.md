@@ -2,6 +2,8 @@
 
 Enterprise insurance software platform built with Next.js, TypeScript, and modern web technologies.
 
+> 📱 **Creating DCFMOB?** See [INDEX_DCFMOB.md](./INDEX_DCFMOB.md) for instructions on creating a copy named "dcfmob"
+
 ## 🚀 Tech Stack
 
 ### Core Framework
