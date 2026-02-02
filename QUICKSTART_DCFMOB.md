@@ -26,15 +26,44 @@ cd dcfmob
 ```
 
 **Update package.json:**
+
+Option 1 - Use the template file:
 ```bash
-# Replace the name field
+# If you have access to the original repo with template files
+cp /path/to/original/package.dcfmob.json package.json
+```
+
+Option 2 - Manual edit:
+```bash
+# Open package.json and change the name field from
+# "dcf-insurance-solutions-nextjs" to "dcfmob"
+# You can use any text editor (nano, vim, VS Code, etc.)
+```
+
+Option 3 - Using sed (Linux):
+```bash
 sed -i 's/"name": "dcf-insurance-solutions-nextjs"/"name": "dcfmob"/' package.json
 ```
 
-**Update README.md:**
+Option 4 - Using sed (macOS):
 ```bash
-# Replace the title
-sed -i 's/DCF Insurance Solutions - Next.js Application/DCFMOB - DCF Mobile Insurance Solutions/' README.md
+sed -i '' 's/"name": "dcf-insurance-solutions-nextjs"/"name": "dcfmob"/' package.json
+```
+
+**Update README.md:**
+
+Option 1 - Use the template file:
+```bash
+# If you have access to the original repo with template files
+cp /path/to/original/README.dcfmob.md README.md
+```
+
+Option 2 - Manual edit:
+```bash
+# Open README.md and change the title from
+# "DCF Insurance Solutions - Next.js Application" to
+# "DCFMOB - DCF Mobile Insurance Solutions"
+# You can use any text editor (nano, vim, VS Code, etc.)
 ```
 
 **Commit and push:**
