@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Palette, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, Mail, Phone, Info } from "lucide-react";
+import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 
-export default function TrialPage() {
+function TrialPageContent() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -620,5 +621,13 @@ export default function TrialPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function TrialPage() {
+  return (
+    <ProtectedRoute>
+      <TrialPageContent />
+    </ProtectedRoute>
   );
 }

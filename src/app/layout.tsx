@@ -4,9 +4,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/data/site.config";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import { LayoutWrapper } from "@/components/layout/LayoutWrapper";
 import { ErrorBoundary } from "@/components/common/ErrorBoundary";
+import { AuthProvider } from "@/contexts/AuthContext";
 import "@/styles/globals.css";
 
 // Font optimization - only load required character sets and weights
@@ -146,24 +146,17 @@ export default function RootLayout({
         className={`${inter.variable} ${plusJakarta.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <ErrorBoundary>
-          <TooltipProvider>
-            <div className="min-h-screen flex flex-col">
-              {/* Header with navigation */}
-              <Header />
-              
-              {/* Main content area - receives page-specific content */}
-              <main className="flex-1 pt-16 md:pt-20">
+          <AuthProvider>
+            <TooltipProvider>
+              <LayoutWrapper>
                 {children}
-              </main>
+              </LayoutWrapper>
               
-              {/* Footer with links and info */}
-              <Footer />
-            </div>
-            
-            {/* Toast notification systems */}
-            <Toaster />
-            <Sonner />
-          </TooltipProvider>
+              {/* Toast notification systems */}
+              <Toaster />
+              <Sonner />
+            </TooltipProvider>
+          </AuthProvider>
         </ErrorBoundary>
       </body>
     </html>

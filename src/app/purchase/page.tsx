@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Building, Globe, Palette, CreditCard, Shield, CheckCircle, Check, ChevronRight, ChevronLeft, Mail } from "lucide-react";
+import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 
-export default function PurchasePage() {
+function PurchasePageContent() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -936,6 +937,14 @@ export default function PurchasePage() {
         </form>
       </div>
     </div>
+  );
+}
+
+export default function PurchasePage() {
+  return (
+    <ProtectedRoute>
+      <PurchasePageContent />
+    </ProtectedRoute>
   );
 }
 
