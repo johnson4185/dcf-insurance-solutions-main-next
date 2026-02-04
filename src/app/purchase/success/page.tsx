@@ -66,12 +66,12 @@ export default function SuccessPage() {
   const calculateAmount = () => {
     if (!formData) return "$0";
     const baseAmount = formData.billingModel === 'subscription' ? 1000 :
-                      formData.billingModel === 'per-member' ? 50 :
-                      formData.billingModel === 'transaction-based' ? 0.5 : 1000;
-    const multiplier = formData.billingFrequency === 'annual' ? 12 : 1;
-    const discount = formData.billingFrequency === 'annual' ? 0.8 : 1;
+                      formData.billingModel === 'member-based' ? 50 :
+                      formData.billingModel === 'transaction' ? 0.5 : 1000;
+    const multiplier = formData.billingCycle === 'annual' ? 12 : 1;
+    const discount = formData.billingCycle === 'annual' ? 0.85 : 1;
     const total = baseAmount * multiplier * discount;
-    return `$${total.toLocaleString()}/${formData.billingFrequency === 'annual' ? 'year' : 'month'}`;
+    return `$${total.toLocaleString()}/${formData.billingCycle === 'annual' ? 'year' : 'month'}`;
   };
 
   const purchaseData = {
@@ -80,7 +80,7 @@ export default function SuccessPage() {
     theme: formData?.colorTheme ? formData.colorTheme.charAt(0).toUpperCase() + formData.colorTheme.slice(1) : "Default",
     licenseNumber: formData?.licenseNumber || "N/A",
     billingModel: formData?.billingModel ? formData.billingModel.charAt(0).toUpperCase() + formData.billingModel.slice(1).replace('-', ' ') : "Subscription",
-    billingFrequency: formData?.billingFrequency ? formData.billingFrequency.charAt(0).toUpperCase() + formData.billingFrequency.slice(1) : "Monthly",
+    billingFrequency: formData?.billingCycle ? formData.billingCycle.charAt(0).toUpperCase() + formData.billingCycle.slice(1) : "Monthly",
     amount: calculateAmount(),
     email: formData?.email || formData?.supportEmail || "admin@company.com",
     phone: formData?.phone || formData?.supportPhone || "",
@@ -762,16 +762,16 @@ export default function SuccessPage() {
                               <p className="text-gray-900 font-medium font-mono">{formData.licenseNumber || "—"}</p>
                             </div>
                             <div>
-                              <label className="text-sm font-medium text-gray-500">Registered State</label>
-                              <p className="text-gray-900 font-medium">{formData.registeredState || "—"}</p>
+                              <label className="text-sm font-medium text-gray-500">Licensed Authority</label>
+                              <p className="text-gray-900 font-medium">{formData.licensedAuthority || "—"}</p>
                             </div>
                             <div>
-                              <label className="text-sm font-medium text-gray-500">Registration Type</label>
-                              <p className="text-gray-900 font-medium">{formData.registrationType || "—"}</p>
+                              <label className="text-sm font-medium text-gray-500">Company Type</label>
+                              <p className="text-gray-900 font-medium">{formData.companyType || "—"}</p>
                             </div>
                             <div>
-                              <label className="text-sm font-medium text-gray-500">Regulatory Body</label>
-                              <p className="text-gray-900 font-medium">{formData.regulatoryBody || "—"}</p>
+                              <label className="text-sm font-medium text-gray-500">NPHIES Registered</label>
+                              <p className="text-gray-900 font-medium">{formData.nphiesRegistered === "yes" ? "Yes" : "No"}</p>
                             </div>
                           </div>
 
@@ -785,8 +785,8 @@ export default function SuccessPage() {
                               <p className="text-gray-900 font-medium capitalize">{formData.billingModel?.replace('-', ' ') || "—"}</p>
                             </div>
                             <div>
-                              <label className="text-sm font-medium text-gray-500">Billing Frequency</label>
-                              <p className="text-gray-900 font-medium capitalize">{formData.billingFrequency || "—"}</p>
+                              <label className="text-sm font-medium text-gray-500">Billing Cycle</label>
+                              <p className="text-gray-900 font-medium capitalize">{formData.billingCycle || "—"}</p>
                             </div>
                             <div>
                               <label className="text-sm font-medium text-gray-500">Amount</label>

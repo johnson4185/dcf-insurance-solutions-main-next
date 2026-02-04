@@ -15,9 +15,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, ChevronDown, Search, LogOut } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { mainNavigation } from "@/data/navigation.data";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -25,9 +25,9 @@ export default function Header() {
   // State management for mobile menu and dropdowns
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [showUserMenu, setShowUserMenu] = useState(false);
   const pathname = usePathname();
-  const { isAuthenticated, user, signOut } = useAuth();
+  const router = useRouter();
+  const { isAuthenticated, user } = useAuth();
 
   /**
    * Check if a given path matches the current route
@@ -101,37 +101,15 @@ export default function Header() {
             </button>
             
             {isAuthenticated && user ? (
-              <div 
-                className="relative"
-                onMouseEnter={() => setShowUserMenu(true)}
-                onMouseLeave={() => setShowUserMenu(false)}
+              <button 
+                onClick={() => router.push("/profile")}
+                className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all"
               >
-                <button className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all">
-                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold text-sm">
-                    {user.firstName?.[0]}{user.lastName?.[0]}
-                  </div>
-                  <span className="font-semibold text-foreground">{user.firstName}</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                
-                {showUserMenu && (
-                  <div className="absolute top-full right-0 pt-2">
-                    <div className="bg-card border border-border rounded-xl shadow-xl py-2 min-w-[200px] animate-in fade-in-0 zoom-in-95 duration-200">
-                      <div className="px-4 py-3 border-b border-border">
-                        <p className="font-semibold text-sm">{user.firstName} {user.lastName}</p>
-                        <p className="text-xs text-muted-foreground">{user.email}</p>
-                      </div>
-                      <button
-                        onClick={signOut}
-                        className="w-full flex items-center gap-2 px-4 py-2 text-sm text-foreground hover:bg-primary/5 hover:text-primary transition-colors"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        Sign Out
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
+                <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold text-sm">
+                  {user.firstName?.[0]}{user.lastName?.[0]}
+                </div>
+                <span className="font-semibold text-foreground">{user.firstName}</span>
+              </button>
             ) : (
               <>
                 <Link 
