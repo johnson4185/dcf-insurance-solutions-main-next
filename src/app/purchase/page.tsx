@@ -85,6 +85,11 @@ function PurchasePageContent() {
     invoiceFrequency: "monthly",
     paymentMethod: "bank-transfer",
 
+    // Review
+    acceptTerms: false,
+    acceptBillingPolicy: false,
+    acknowledgeUsageCharges: false,
+
     // Payment
     cardNumber: "",
     cardholderName: "",
@@ -1693,6 +1698,62 @@ function PurchasePageContent() {
                     </div>
                   </div>
                 </div>
+
+                {/* Review & Finalize */}
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Configuration Summary</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      { label: "Company", value: formData.companyLegalName || "—" },
+                      { label: "Subdomain", value: `${formData.subdomain || "—"}.pmisoft.cloud` },
+                      { label: "Billing Model", value: formData.billingModel.replace("-", " ") },
+                      { label: "Industry Type", value: formData.industryType },
+                    ].map((item) => (
+                      <div key={item.label} className="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3">
+                        <p className="text-xs font-semibold text-gray-500 mb-1">{item.label}</p>
+                        <p className="text-sm font-semibold text-gray-900">{item.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Contract & Confirmation</h3>
+                  <div className="space-y-3">
+                    {[
+                      {
+                        id: "acceptTerms",
+                        label: "Accept Terms & Conditions",
+                        value: formData.acceptTerms,
+                      },
+                      {
+                        id: "acceptBillingPolicy",
+                        label: "Accept Billing Policy",
+                        value: formData.acceptBillingPolicy,
+                      },
+                      {
+                        id: "acknowledgeUsageCharges",
+                        label: "Acknowledge usage-based charges",
+                        value: formData.acknowledgeUsageCharges,
+                      },
+                    ].map((item) => (
+                      <label key={item.id} className="flex items-center gap-3 rounded-xl border border-gray-200 px-4 py-3">
+                        <input
+                          type="checkbox"
+                          checked={item.value}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              [item.id]: e.target.checked,
+                            })
+                          }
+                          className="h-4 w-4 text-blue-600"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{item.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -1703,7 +1764,7 @@ function PurchasePageContent() {
               <button
                 type="button"
                 onClick={() => setCurrentStep(currentStep - 1)}
-                className="flex items-center gap-2 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 transition-all"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full border border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all"
               >
                 <ChevronLeft className="w-5 h-5" />
                 Back
@@ -1714,26 +1775,26 @@ function PurchasePageContent() {
               <button
                 type="button"
                 onClick={() => setCurrentStep(currentStep + 1)}
-                className="flex items-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all ml-auto"
+                className="ml-auto group flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md hover:shadow-lg transition-all"
               >
                 Continue
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             ) : (
               <div className="ml-auto flex items-center gap-3">
                 <button
                   type="button"
                   onClick={handleSaveDraft}
-                  className="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-gray-400 transition-all"
+                  className="px-4 py-2 text-sm font-semibold rounded-full border border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-all"
                 >
                   Save Draft
                 </button>
                 <button
                   type="submit"
-                  className="flex items-center gap-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="group flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md hover:shadow-lg transition-all"
                 >
-                  <CheckCircle className="w-5 h-5" />
-                  Submit for Eligibility Review
+                  <CheckCircle className="w-4 h-4" />
+                  Submit & Provision Platform
                 </button>
               </div>
             )}

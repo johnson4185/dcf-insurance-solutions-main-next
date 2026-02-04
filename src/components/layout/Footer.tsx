@@ -1,46 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { footerData } from "@/data/footer.data";
 
 export default function Footer() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-primary to-accent py-5">
-        <div className="container-wide mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-semibold text-primary-foreground text-lg">
-            SIGN UP FOR PRODUCT UPDATES
-          </span>
-          <div className="flex gap-2">
-            <input
-              suppressHydrationWarning
-              type="text"
-              placeholder="Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="px-4 py-2.5 rounded-full bg-white text-foreground text-sm w-40 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <input
-              suppressHydrationWarning
-              type="email"
-              placeholder="Your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-2.5 rounded-full bg-white text-foreground text-sm w-48 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button className="bg-secondary text-secondary-foreground px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-semibold hover:bg-navy-light transition-colors">
-              SUBMIT
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container-wide mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
